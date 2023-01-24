@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Movie } from '../Models/movie';
-import { DataService } from '../Service/data.service';
-import { MovieState } from '../Store/Reducers/movie.reducers';
+import {Component, Input, OnInit} from '@angular/core';
+import {select, Store} from '@ngrx/store';
+import {Movie} from '../Models/movie';
+import {DataService} from '../Service/data.service';
+import {MovieState} from '../Store/Reducers/movie.reducers';
+import {movieSelector, movieUserSelector} from "../Store/selectors/movie.selectors";
 
 @Component({
   selector: 'app-movie-list',
@@ -10,8 +11,11 @@ import { MovieState } from '../Store/Reducers/movie.reducers';
   styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
-  movies$ = this.store.select('movies');
-  constructor(private store: Store<MovieState>) {}
+  movies$ = this.store.pipe(select(movieUserSelector));
 
-  ngOnInit(): void {}
+  constructor(private store: Store<MovieState>) {
+  }
+
+  ngOnInit(): void {
+  }
 }

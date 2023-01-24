@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Movie } from '../Models/movie';
+import {Injectable} from '@angular/core';
+import {InMemoryDbService} from 'angular-in-memory-web-api';
+import {Movie} from '../Models/movie';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryService implements InMemoryDbService {
-  constructor() {}
+  constructor() {
+  }
 
   createDb() {
     return {
@@ -32,7 +33,8 @@ export class InMemoryService implements InMemoryDbService {
     const movie2 = new Movie(
       'Age of Ultron',
       1403,
-      new Date('01 May, 2015 05:30:00')
+      new Date('01 May, 2015 05:30:00'),
+      'ABOBA'
     );
     movie2.id = 3;
 

@@ -11,7 +11,7 @@
         <mat-label>Total earning</mat-label>
         <input name='earning' [(ngModel)]="newMovie.earning" type='number' matInput placeholder="In million">
       </mat-form-field>
-      
+
       <mat-form-field appearance="fill">
         <mat-label>Release date</mat-label>
         <input name='releaseDate' [(ngModel)]="newMovie.releaseDate" matInput [matDatepicker]="picker">
@@ -19,6 +19,7 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <button (click)="addNewMovies()" style="margin-left: 33%;" mat-raised-button color="primary">Add Movie</button>
+      <button (click)="changeUser()" mat-raised-button color="secondary">Change User</button>
     </form>
   </div>
   <mat-divider></mat-divider>
