@@ -1,15 +1,14 @@
-import {Injectable} from '@angular/core';
-import {InMemoryDbService} from 'angular-in-memory-web-api';
-import {Movie} from '../Models/movie';
+import { Injectable } from '@angular/core';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { Movie } from '../Models/movie';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryService implements InMemoryDbService {
-  constructor() {
-  }
+  constructor() {}
 
-  createDb() {
+  createDb(): {movies: Movie[]} {
     return {
       movies: this.mockMovies(),
     };

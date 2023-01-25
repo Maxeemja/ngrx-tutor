@@ -1,8 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Movie} from './Models/movie';
-import {DataService} from './Service/data.service';
-import {addMovies, assignUser, getMovies} from './Store/Actions/movie.action';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Movie } from './Models/movie';
+import { DataService } from './Service/data.service';
+import {
+  addMovies,
+  assignUser,
+  getMovies,
+  logout,
+} from './Store/Actions/movie.action';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +28,7 @@ export class AppComponent implements OnInit {
 
   getAllMovies(): void {
     this.store.dispatch(getMovies());
+    this.store.dispatch(assignUser('MXMJ'));
     // this.dataService.getMovies().subscribe((movies: Movie[]) => {
     //   this.movies = movies;
     // });
@@ -37,7 +43,11 @@ export class AppComponent implements OnInit {
     // });
   }
 
-  changeUser() {
+  changeUser(): void {
     this.store.dispatch(assignUser('ABOBA'));
+  }
+
+  logout(): void {
+    this.store.dispatch(logout());
   }
 }
