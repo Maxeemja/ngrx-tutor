@@ -21,6 +21,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { RouterSerializer } from './Store/routerSerializer';
+import {MatIconModule} from '@angular/material/icon';
 // import { reducers, metaReducers } from './reducers';
 
 @NgModule({
@@ -57,6 +58,7 @@ import { RouterSerializer } from './Store/routerSerializer';
     StoreRouterConnectingModule.forRoot({
       serializer: RouterSerializer,
     }),
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

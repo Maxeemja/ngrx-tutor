@@ -8,7 +8,7 @@ import { Movie } from '../Models/movie';
 export class InMemoryService implements InMemoryDbService {
   constructor() {}
 
-  createDb() {
+  createDb(): {movies: Movie[]} {
     return {
       movies: this.mockMovies(),
     };

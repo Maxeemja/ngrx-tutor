@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
 
   movies: Movie[] = [];
   newMovie: Movie = new Movie();
-  title = 'movieApp';
   constructor(private store: Store) {}
 
   ngOnInit(): void {
@@ -21,23 +20,16 @@ export class HomeComponent implements OnInit {
 
   getAllMovies(): void {
     this.store.dispatch(getMovies());
-    this.store.dispatch(assignUser('Subrat'));
-    // this.dataService.getMovies().subscribe((movies: Movie[]) => {
-    //   this.movies = movies;
-    // });
+    this.store.dispatch(assignUser('MXMJ'));
   }
 
   addNewMovies(): void {
     this.store.dispatch(addMovies(this.newMovie));
     this.newMovie = new Movie();
-    // this.dataService.addMovies(this.newMovie).subscribe((res) => {
-    //   this.getAllMovies();
-    //   this.newMovie = new Movie();
-    // });
   }
 
   changeUser(): void {
-    this.store.dispatch(assignUser('Sanjit'));
+    this.store.dispatch(assignUser('ABOBA'));
   }
 
   logout(): void {
